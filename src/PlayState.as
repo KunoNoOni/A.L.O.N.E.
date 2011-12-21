@@ -42,7 +42,7 @@ package
 				}
 			}
 			
-			if(Registry.metal == Registry.aloneiumNeeded)
+			if(Registry.metal >= Registry.aloneiumNeeded)
 			{
 				FlxG.flash(0xffffffff,1);
 				missionComplete();
@@ -137,6 +137,7 @@ package
 		
 		private function missionComplete():void
 		{
+			
 			Registry.enemys.setAll("exists",false);	
 			Registry.wonGame = true;
 			counter += FlxG.elapsed;
